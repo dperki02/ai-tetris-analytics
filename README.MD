@@ -63,7 +63,126 @@ Includes:
 
 ### 🔁 **5. Play Again Loop**
 After each game:
+Play again? (y/n):
+`
+The game immediately returns to the menu without restarting the script.
 
+### 🎵 **6. Optional Sound Effects**
+- confirm.wav  
+- cancel.wav  
+
+---
+
+## 🛠 Installation & Setup
+
+### **Clone the Repo**
+bash git clone https://github.com/dperki02/ai-tetris-analytics.git cd ai-tetris-analytics
+`
+
+### **Set Up Environment**
+
+Using conda (recommended):
+bash conda create -n ai_tetris python=3.10 conda activate ai_tetris
+### **Install Dependencies**
+bash pip install -r requirements.txt
+### **Initialize the Database (if needed)**
+bash sqlite3 tetris_leaderboard.db < init_db.sql
+or run the game once — it will create the DB automatically.
+
+---
+
+## ▶️ Run the Tetris Game
+bash python tetris_game.py
+### Controls:
+
+| Key     | Action                   |
+| ------- | ------------------------ |
+| ↑       | Rotate piece             |
+| ← / →   | Move piece left/right    |
+| ↓       | Soft drop                |
+| Space   | Hard drop                |
+| P       | Pause / Resume           |
+| ESC / Q | Exit (with confirmation) |
+
+On game over or exit, the session is stored in the SQLite database.
+
+---
+
+## 🧠 Train the AI Agent
+bash python train_ai.py
+Outputs:
+
+* Best predicted weights
+* Validation performance
+* Saves new weights to **ai_weights.pkl**
+
+The game automatically loads this file on startup.
+
+---
+
+## 📈 Launch the Analytics Dashboard
+bash streamlit run dashboard.py
+Visit the local URL (typically):
+http://localhost:8501
+Features:
+
+* Session summary
+* Username filtering
+* Multiple performance charts
+* AI vs Human comparisons
+
+---
+
+## 🌐 Hosting (Streamlit Cloud)
+
+You can deploy the dashboard online by connecting this repo to:
+
+[https://streamlit.io/cloud](https://streamlit.io/cloud)
+
+Select:
+
+* Repo: `dperki02/ai-tetris-analytics`
+* Branch: `main`
+* File: `dashboard.py`
+
+Your dashboard will be instantly available at a public URL.
+
+---
+
+## 🧩 Project Structure
+text ai_tetris_project/ ├── ai_agent.py ├── dashboard.py ├── db.py ├── tetris_game.py ├── train_ai.py ├── requirements.txt ├── init_db.sql ├── tetris_leaderboard.db (optional) ├── confirm.wav (optional) ├── cancel.wav (optional) └── README.md
+---
+
+## 🏗 Future Enhancements (Roadmap)
+
+* Deploy the full system as a web application using WebAssembly or Pyodide
+* Add multiplayer modes or challenges
+* Add next-piece predictor visual
+* Add per-session analytics and heatmaps
+* Integrate cloud database (PostgreSQL)
+* Add authentication for user profiles
+* Add achievement badges on the dashboard
+
+---
+
+## ❤️ Author
+
+**Dana Paulette (dperki02)**
+Senior IT & Digital Transformation Leader
+Founder – DeoNexa Digital Solutions
+AI | Engineering | Product Analytics | Innovation
+
+---
+
+## 📜 License
+
+MIT License — free to use, modify, and share.
+
+---
+
+# 🎉 Thank you for checking out the AI Tetris Project!
+
+If you enjoyed it, feel free to star ⭐ the repo.
 
 This project showcases a full pipeline:
 

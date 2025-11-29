@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 🎮 AI-Powered Tetris Game with Intelligent Agent + Live Analytics Dashboard
 
 Created by: Dana Paulette (dperki02)
